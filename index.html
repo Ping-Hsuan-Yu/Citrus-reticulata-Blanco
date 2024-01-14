@@ -279,9 +279,8 @@
             let orangeValue = document.getElementById("orange").value
             let tomatoValue = document.getElementById("tomato").value
             document.getElementById("orange-total").innerText = (Number(orangeValue) * 400).toLocaleString()
-            // document.getElementById("tomato-total").innerText = (Number(tomatoValue) * 120).toLocaleString()
-            // document.getElementById("sum").innerText = (Number(orangeValue) * 400 + Number(tomatoValue) * 120).toLocaleString()
-            document.getElementById("sum").innerText = (Number(orangeValue) * 400).toLocaleString()
+            document.getElementById("tomato-total").innerText = (Number(tomatoValue) * 120).toLocaleString()
+            document.getElementById("sum").innerText = (Number(orangeValue) * 400 + Number(tomatoValue) * 120).toLocaleString()
         }
 
         const copyText = (element) => {
