@@ -140,7 +140,7 @@
             </div>
             <div class="form-floating">
                 <input class="form-control" type="text" name="entry.430992118" id="orange" placeholder="🍊 砂糖橘"
-                   disabled onchange="handleOnChange()" min="0" pattern='\d*' value="我們2024冬天見">
+                    onchange="handleOnChange()" min="0" pattern='\d*'>
                 <label for="orange">🍊 砂糖橘</label>
                 <div class="form-text px-3">
                     <div class="d-flex justify-content-between">
@@ -151,7 +151,7 @@
             </div>
             <div class="form-floating">
                 <input class="form-control" type="text" name="entry.1458536117" id="tomato" placeholder="🍅 小番茄"
-                disabled onchange="handleOnChange()" min="0" pattern='\d*' value="我們2024冬天見">
+                    onchange="handleOnChange()" min="0" pattern='\d*'>
                 <label for="tomato">🍅 小番茄</label>
                 <div class="form-text px-3">
                     <div class="d-flex justify-content-between">
@@ -168,7 +168,8 @@
             </div>
             <div class="text-end pe-3"><span>總計$ </span><span id="sum">0</span></div>
 
-            <button class="btn btn-outline-orange" type="submit">提交</button>
+            <!-- <button class="btn btn-outline-orange" type="submit">提交</button> -->
+            <button class="btn btn-outline-orange" type="submit" disabled>2024冬天見</button>
         </form>
         <hr class="my-4">
         <h1 class="title fw-bold">匯款資訊<span class="fw-lighter fs-sm ms-2">點擊帳號即可複製</span></h1>
@@ -192,7 +193,7 @@
 
             </div>
         </div>
-        <div class="text-end fw-lighter fs-sm mt-3">最後更新時間：2024/01/14</div>
+        <div class="text-end fw-lighter fs-sm mt-3">最後更新時間：2024/03/24</div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -278,10 +279,11 @@
         const handleOnChange = () => {
             let orangeValue = document.getElementById("orange").value
             let tomatoValue = document.getElementById("tomato").value
-            // document.getElementById("orange-total").innerText = (Number(orangeValue) * 400).toLocaleString()
-            document.getElementById("tomato-total").innerText = (Number(tomatoValue) * 120).toLocaleString()
-            // document.getElementById("sum").innerText = (Number(orangeValue) * 400 + Number(tomatoValue) * 120).toLocaleString()
-            document.getElementById("sum").innerText = (Number(tomatoValue) * 120).toLocaleString()
+            if (!isNaN(orangeValue) && !isNaN(tomatoValue)) {
+                document.getElementById("orange-total").innerText = (Number(orangeValue) * 400).toLocaleString()
+                document.getElementById("tomato-total").innerText = (Number(tomatoValue) * 120).toLocaleString()
+                document.getElementById("sum").innerText = (Number(orangeValue) * 400 + Number(tomatoValue) * 120).toLocaleString()
+            }
         }
 
         const copyText = (element) => {
